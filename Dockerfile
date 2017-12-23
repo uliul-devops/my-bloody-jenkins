@@ -34,6 +34,7 @@ USER jenkins
 COPY plugins.txt /usr/share/jenkins/ref/
 COPY install-plugins-with-retry.sh /usr/local/bin/install-plugins-with-retry.sh
 RUN /usr/local/bin/install-plugins-with-retry.sh < /usr/share/jenkins/ref/plugins.txt
+COPY cac-experiment/*.hpi /usr/share/jenkins/ref/plugins
 
 # Add all init groovy scripts to ref folder and change their ext to .override
 # so Jenkins will override them every time it starts
