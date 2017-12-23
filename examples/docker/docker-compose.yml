@@ -6,7 +6,7 @@ services:
       - '8080:8080'
       - '50000:50000'
     volumes:
-      - '${PWD}/config.yml:/config.yml'
+      - '${PWD}/jenkins-config.yml:/config.yml'
       - '.data/jenkins_home:/var/jenkins_home'
       - '.data/jenkins-workspace-home:/jenkins-workspace-home'
       - '/var/run/docker.sock:/var/run/docker.sock'

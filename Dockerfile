@@ -38,7 +38,7 @@ COPY cac-experiment/*.hpi /usr/share/jenkins/ref/plugins
 
 # Add all init groovy scripts to ref folder and change their ext to .override
 # so Jenkins will override them every time it starts
-COPY init-scripts/* /usr/share/jenkins/ref/init.groovy.d/
+COPY init-scripts/JenkinsConfigLoaderCac.groovy /usr/share/jenkins/ref/init.groovy.d/
 
 RUN cd /usr/share/jenkins/ref/init.groovy.d/ && \
     for f in *.groovy; do mv "$f" "${f}.override"; done

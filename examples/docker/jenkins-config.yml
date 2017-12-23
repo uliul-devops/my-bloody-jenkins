@@ -1,0 +1,18 @@
+jenkins:
+  clouds:
+    - docker:
+      dockerHost:
+        uri: 'unix:///var/run/docker.sock'
+      templates:
+        - labelString: docker-slave generic
+          dockerTemplateBase:
+            image: odavid/jenkins-jnlp-slave:latest
+            volumesString: |
+              '/var/run/docker.sock:/var/run/docker.sock'
+          remoteFs: /home/jenkins
+          connector:
+            jnlp:
+              user: jenkins
+              jnlpLauncher:
+                vmargs: -Xmx1g
+          instanceCapStr: '10'
