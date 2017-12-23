@@ -1,4 +1,17 @@
+remotingCLI:
+  enabled: false
+
+GlobalJobDslSecurityConfiguration: 
+  useScriptSecurity: false
+
 jenkins:
+  agentProtocols:
+    - JNLP4-connect
+  disableRememberMe: false
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: true
+    
   clouds:
     - docker:
         name: docker
